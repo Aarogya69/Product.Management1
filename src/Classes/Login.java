@@ -73,6 +73,30 @@ public class Login extends JFrame {
         contentPane.add(ShopPassword);
         ShopPassword.setColumns(10);
 
+        JLabel lblNewLabel_2 = new JLabel("Shopping Management");
+        lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+        lblNewLabel_2.setBounds(240, 23, 365, 43);
+        contentPane.add(lblNewLabel_2);
+
+        JButton btnNewButton = new JButton("Login");
+        btnNewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(ShopUser.getSelectedItem().toString().equals("User")) {
+                    if(ShopPassword.getText().equals("1234")) {
+                        dispose();
+                        Products p=new Products();
+                        p.setVisible(true);
+                    }
+                    else {
+                        JOptionPane.showInternalMessageDialog(null, "You Entered Wrong Password", "Wrong Password", JOptionPane.WARNING_MESSAGE);
+                    }
+                }
+            }
+        });
+        btnNewButton.setBounds(496, 264, 89, 23);
+        contentPane.add(btnNewButton);
+
+
 
     }
 }
